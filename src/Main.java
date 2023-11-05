@@ -7,8 +7,10 @@ public class Main {
     public static void main(String[] args) {
         Set<Integer> numbers = new HashSet<>();
         System.out.println("hashset vuoto: " + numbers);
-        System.out.println("hashset popolato: " + fill(numbers));
-        elements(fill(numbers));
+        numbers = fill(new HashSet<>());
+        System.out.println("hashset popolato: " + numbers);
+        elements(numbers);
+        System.out.println("verifica se l'elemento è nella lista: " + verifyElements(numbers, 26));
     }
 
     public static Set <Integer> fill (Set <Integer> list) {
@@ -25,5 +27,16 @@ public class Main {
          Integer e = i.next();
            System.out.println("elemento presente nell'hashset: " + e);
         }
+    }
+
+    public static String verifyElements(Set<Integer> list, int x) {
+        Iterator<Integer> i = list.iterator();
+        while (i.hasNext()) {
+            Integer e = i.next();
+            if (e.equals(x)) {
+                return "L'elemento " + x + " è presente nella lista";
+            }
+        }
+        return "L'elemento " + x + " non è presente nella lista";
     }
 }
