@@ -34,9 +34,9 @@ public class Main {
         while (i.hasNext()) {
             Integer e = i.next();
             if (e.equals(x)) {
-                return "L'elemento " + x + " è presente nella lista";
+                return x + "\nSì, è presente";
             }
         }
-        return "L'elemento " + x + " non è presente nella lista";
+        return x + "\nNo, non è presente";
     }
 }
